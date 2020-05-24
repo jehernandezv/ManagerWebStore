@@ -60,7 +60,7 @@ class ProductController {
      * @param res 
      */
     public async updateProduct(req:Request,res:Response):Promise<void>{
-        await Product.update({_id:req.params.id},{$set:{name:req.body.name}});
+        await Product.update({_id:req.params.id},{$set:{name:req.body.name,cant:req.body.cant}});
         res.status(200).send('Producto actualizado');
     }
 }

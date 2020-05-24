@@ -1,1 +1,29 @@
-<p>product-form works!</p>
+<div class="col-md-4 offset-md-2">
+    <div class="card">
+        <div class="card-body">
+            <form>
+                <!--input of name of product-->
+                <div class="form-group">
+                    <input type="text" name="nameProduct" [(ngModel)]="product.name" placeholder="Ingrese el nombre del producto" class="form-control" autofocus>
+                </div>
+                <!--Input of quantity-->
+                <div class="form-group">
+                    <input type="number" name="cantProduct" [(ngModel)]="product.cant" placeholder="Por favor ingrese el número de unidades del producto" class="form-control">
+                </div>
+                
+                <button class="btn btn-success btn-block" (click)="saveNewProduct()">
+                   Guardar                 
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+    <!--notificacion de estado-->
+<div class="col-md-4">
+    <div class="card card-body text-center">
+        <h4>Previsualización</h4>
+        <h3>Nombre: {{product.name}}</h3>
+        <p>Cantidad: {{product.cant}}</p>
+        <h4>Creación: {{today | date:'dd-MM-yyyy hh:mm:ss a':'GMT-5'}}</h4>
+    </div>
+</div>

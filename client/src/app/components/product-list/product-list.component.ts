@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
 import { ProductsService} from '../../services/products.service';
 
 @Component({
@@ -9,6 +9,7 @@ import { ProductsService} from '../../services/products.service';
 export class ProductListComponent implements OnInit {
   //Arreglo para almacenar los productos traidos de la base de datos del servidor
   products: any = [];
+  @HostBinding('class') classes = 'row';
 
   constructor(private productService: ProductsService) { }
 
