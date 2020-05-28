@@ -28,8 +28,8 @@ export class ProductsService {
     return this.http.post(this.API_URI+'/products/',product);
   }
 
-  updateProduct(id:String,updateProduct:Product):Observable<Product>{
-    return this.http.put(this.API_URI+'/products/'+id,updateProduct);
+  updateProduct(id:String,product:Product):Observable<Product>{
+    return this.http.put(this.API_URI+'/products/'+id,product);
   }
 
 }

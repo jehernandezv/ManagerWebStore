@@ -2,13 +2,17 @@
     <div class="card text-center">
         <div class="card-header bg-dark text-white d-flex justify-content-between aling-items-center">
             Nombre: {{product.name}}
-            <button class="btn btn-danger">
+            <button class="btn btn-danger" (click) = "deleteProduct(product._id)">
                 <i class="far fa-trash-alt"></i>
             </button>
         </div>
         <div class="card-body">
             <p>Cantidad: {{product.cant}}</p>
-            <a href="" class="btn btn-info btn-block">Editar Producto</a>
+            <a class="btn btn-info btn-block" [routerLink]="['/products/edit', product._id]">
+                Editar Producto
+            </a>
         </div>
     </div>
 </div>
+<simple-notifications></simple-notifications>
+

@@ -55,13 +55,16 @@ class ProductController {
     }
 
     /**
-     * Actuliza un producto por medio de su _id y actualiza el campo name del producto
+     * Actualiza un producto por medio de su _id y tambien el campo name del producto
      * @param req 
      * @param res 
      */
     public async updateProduct(req:Request,res:Response):Promise<void>{
-        await Product.update({_id:req.params.id},{$set:{name:req.body.name,cant:req.body.cant}});
-        res.status(200).send('Producto actualizado');
+        await Product.updateOne({_id:req.params.id},req.body);
+        console.log(req.body);
+        res.status(200).json({
+            text: 'Producto actualizado'
+        });
     }
 }
 

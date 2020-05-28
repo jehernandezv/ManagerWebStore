@@ -73,14 +73,17 @@ class ProductController {
         });
     }
     /**
-     * Actuliza un producto por medio de su _id y actualiza el campo name del producto
+     * Actualiza un producto por medio de su _id y tambien el campo name del producto
      * @param req
      * @param res
      */
     updateProduct(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield Product_1.default.update({ _id: req.params.id }, { $set: { name: req.body.name } });
-            res.status(200).send('Producto actualizado');
+            yield Product_1.default.updateOne({ _id: req.params.id }, req.body);
+            console.log(req.body);
+            res.status(200).json({
+                text: 'Producto actualizado'
+            });
         });
     }
 }
